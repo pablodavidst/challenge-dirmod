@@ -10,6 +10,17 @@ app.get('/',(req,res)=>{
 
 app.use('/cotizacion',cotizacionesRouter);
 
+// descomentar en produccion (Respetar el orden, debe ir debajo de las rutas)
+
+/*app.use(express.static(path.join(__dirname, 'build')));
+
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+*/
+//fin descomentar en produccion
+
 app.listen(3005,()=>{
     console.log(`escuchando en el puerto 3005`)
 })
